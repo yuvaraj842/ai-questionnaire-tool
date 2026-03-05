@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+sentence-transformers
+faiss-cpu
+pandas
+python-docx
+passlib[bcrypt]
+python-jose
+sqlalchemy

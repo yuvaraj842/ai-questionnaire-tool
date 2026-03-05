@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Results</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+.header{
+background:#2c3e50;
+color:white;
+padding:20px;
+text-align:center;
+font-size:26px;
+}
+
+.container{
+width:90%;
+margin:30px auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+th{
+background:#3498db;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#f1f1f1;
+}
+
+.summary{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+button{
+background:#27ae60;
+border:none;
+padding:10px 18px;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e8449;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Generated Answers
+</div>
+
+<div class="container">
+
+<div class="summary">
+
+<h3>Coverage Summary</h3>
+
+<p>Total Questions: {{ summary.total }}</p>
+<p>Answered: {{ summary.answered }}</p>
+<p>Not Found: {{ summary.not_found }}</p>
+
+</div>
+
+<table>
+
+<tr>
+<th>Question</th>
+<th>Answer</th>
+<th>Citation</th>
+<th>Confidence</th>
+<th>Evidence</th>
+</tr>
+
+{% for r in results %}
+
+<tr>
+
+<td>{{ r.question }}</td>
+<td>{{ r.answer }}</td>
+<td>{{ r.citation }}</td>
+<td>{{ r.confidence }}</td>
+<td>{{ r.evidence }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/export">
+<button>Download Document</button>
+</a>
+
+</div>
+
+</body>
+</html>
