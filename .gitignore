@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Uploaded files
+uploads/
+
+# Generated files
+answers.docx
+
+# OS files
+.DS_Store
+Thumbs.db
